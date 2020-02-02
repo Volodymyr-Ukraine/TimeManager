@@ -10,6 +10,16 @@ import UIKit
 
 class TaskEditMainView: UIView {
 
+    @IBOutlet var titleTextView: UITextView!
+
+    @IBOutlet var descriptionTextView: UITextView!
+    @IBOutlet var highPriorityButton: UIButton!
+    @IBOutlet var mediumPriorityButton: UIButton!
+    @IBOutlet var lowPriorityButton: UIButton!
+    
+    @IBOutlet var notificationChooseButton: UIButton!
+    @IBOutlet var bottomGapConstraints: NSLayoutConstraint!
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -18,4 +28,10 @@ class TaskEditMainView: UIView {
     }
     */
 
+    @IBAction func backPressed(_ sender: Any) {
+    }
+    @IBAction func deleteEventPressed(_ sender: Any) {
+    }
+    @IBAction func notificationChangePressed(_ sender: Any) {
+    }
 }

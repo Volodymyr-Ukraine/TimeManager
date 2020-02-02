@@ -3,19 +3,64 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99192D8211C240727D7812D0 /* Pods_TimeManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75CCA3AEF85175466DDB52C4 /* Pods_TimeManager.framework */; };
+		F50072D623E5DC3100A4732C /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50072D523E5DC3100A4732C /* TaskListViewController.swift */; };
+		F50072D823E69AC800A4732C /* TaskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50072D723E69AC800A4732C /* TaskListModel.swift */; };
+		F50072DC23E69DB400A4732C /* TaskListMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50072DB23E69DB400A4732C /* TaskListMainView.swift */; };
+		F50072DE23E69DBE00A4732C /* TaskListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F50072DD23E69DBE00A4732C /* TaskListStoryboard.storyboard */; };
+		F50072E223E6B64B00A4732C /* TaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50072E023E6B64B00A4732C /* TaskListTableViewCell.swift */; };
+		F50072E323E6B64B00A4732C /* TaskListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F50072E123E6B64B00A4732C /* TaskListTableViewCell.xib */; };
+		F50072E523E6B7FE00A4732C /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50072E423E6B7FE00A4732C /* TaskData.swift */; };
+		F50072E723E6CC4B00A4732C /* LoginMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50072E623E6CC4B00A4732C /* LoginMainView.swift */; };
+		F50072ED23E7150C00A4732C /* TaskDetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F50072EC23E7150C00A4732C /* TaskDetailStoryboard.storyboard */; };
+		F50072EF23E7152600A4732C /* TaskDetailViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50072EE23E7152600A4732C /* TaskDetailViewControllerTableViewController.swift */; };
+		F50072F123E71C4100A4732C /* TaskDetailsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50072F023E71C4100A4732C /* TaskDetailsMainView.swift */; };
+		F50072F323E71D7400A4732C /* TaskDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50072F223E71D7400A4732C /* TaskDetailModel.swift */; };
+		F50072F923E730B300A4732C /* TaskEditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50072F823E730B300A4732C /* TaskEditModel.swift */; };
+		F50072FB23E730FE00A4732C /* TaskEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50072FA23E730FE00A4732C /* TaskEditViewController.swift */; };
+		F50072FD23E7312800A4732C /* TaskEditMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50072FC23E7312800A4732C /* TaskEditMainView.swift */; };
+		F50072FF23E7381800A4732C /* TaskEditStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F50072FE23E7381800A4732C /* TaskEditStoryboard.storyboard */; };
 		F5EB10EB23E58B1A00F403E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB10EA23E58B1A00F403E2 /* AppDelegate.swift */; };
 		F5EB10ED23E58B1A00F403E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB10EC23E58B1A00F403E2 /* SceneDelegate.swift */; };
 		F5EB10EF23E58B1A00F403E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB10EE23E58B1A00F403E2 /* ViewController.swift */; };
 		F5EB10F223E58B1A00F403E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5EB10F023E58B1A00F403E2 /* Main.storyboard */; };
 		F5EB10F423E58B2600F403E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5EB10F323E58B2600F403E2 /* Assets.xcassets */; };
 		F5EB10F723E58B2600F403E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5EB10F523E58B2600F403E2 /* LaunchScreen.storyboard */; };
+		F5EB110423E58E4C00F403E2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB110323E58E4C00F403E2 /* Coordinator.swift */; };
+		F5EB110623E58EBC00F403E2 /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB110523E58EBC00F403E2 /* StoryboardLoadable.swift */; };
+		F5EB110823E58F0B00F403E2 /* AppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB110723E58F0B00F403E2 /* AppConfigurator.swift */; };
+		F5EB110A23E58F5700F403E2 /* ScreensCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB110923E58F5700F403E2 /* ScreensCoordinator.swift */; };
+		F5EB110E23E5916200F403E2 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5EB110D23E5916200F403E2 /* LoginView.storyboard */; };
+		F5EB111023E5919100F403E2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB110F23E5919100F403E2 /* LoginViewController.swift */; };
+		F5EB111323E591D200F403E2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB111223E591D200F403E2 /* RootViewController.swift */; };
+		F5EB111623E5961E00F403E2 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB111523E5961E00F403E2 /* LoginModel.swift */; };
+		F5EB111923E596D200F403E2 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB111823E596D200F403E2 /* LoginData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		151217D77D353E11350FBE77 /* Pods-TimeManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeManager.debug.xcconfig"; path = "Target Support Files/Pods-TimeManager/Pods-TimeManager.debug.xcconfig"; sourceTree = "<group>"; };
+		75CCA3AEF85175466DDB52C4 /* Pods_TimeManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3CD7BB95AABEE48E696FB39 /* Pods-TimeManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeManager.release.xcconfig"; path = "Target Support Files/Pods-TimeManager/Pods-TimeManager.release.xcconfig"; sourceTree = "<group>"; };
+		F50072D523E5DC3100A4732C /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		F50072D723E69AC800A4732C /* TaskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListModel.swift; sourceTree = "<group>"; };
+		F50072DB23E69DB400A4732C /* TaskListMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListMainView.swift; sourceTree = "<group>"; };
+		F50072DD23E69DBE00A4732C /* TaskListStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TaskListStoryboard.storyboard; sourceTree = "<group>"; };
+		F50072E023E6B64B00A4732C /* TaskListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewCell.swift; sourceTree = "<group>"; };
+		F50072E123E6B64B00A4732C /* TaskListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskListTableViewCell.xib; sourceTree = "<group>"; };
+		F50072E423E6B7FE00A4732C /* TaskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskData.swift; sourceTree = "<group>"; };
+		F50072E623E6CC4B00A4732C /* LoginMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainView.swift; sourceTree = "<group>"; };
+		F50072EC23E7150C00A4732C /* TaskDetailStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskDetailStoryboard.storyboard; sourceTree = "<group>"; };
+		F50072EE23E7152600A4732C /* TaskDetailViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewControllerTableViewController.swift; sourceTree = "<group>"; };
+		F50072F023E71C4100A4732C /* TaskDetailsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailsMainView.swift; sourceTree = "<group>"; };
+		F50072F223E71D7400A4732C /* TaskDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailModel.swift; sourceTree = "<group>"; };
+		F50072F823E730B300A4732C /* TaskEditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditModel.swift; sourceTree = "<group>"; };
+		F50072FA23E730FE00A4732C /* TaskEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewController.swift; sourceTree = "<group>"; };
+		F50072FC23E7312800A4732C /* TaskEditMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditMainView.swift; sourceTree = "<group>"; };
+		F50072FE23E7381800A4732C /* TaskEditStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskEditStoryboard.storyboard; sourceTree = "<group>"; };
 		F5EB10E723E58B1A00F403E2 /* TimeManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5EB10EA23E58B1A00F403E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5EB10EC23E58B1A00F403E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +69,15 @@
 		F5EB10F323E58B2600F403E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5EB10F623E58B2600F403E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5EB10F823E58B2600F403E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5EB110323E58E4C00F403E2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F5EB110523E58EBC00F403E2 /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
+		F5EB110723E58F0B00F403E2 /* AppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurator.swift; sourceTree = "<group>"; };
+		F5EB110923E58F5700F403E2 /* ScreensCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreensCoordinator.swift; sourceTree = "<group>"; };
+		F5EB110D23E5916200F403E2 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
+		F5EB110F23E5919100F403E2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F5EB111223E591D200F403E2 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		F5EB111523E5961E00F403E2 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		F5EB111823E596D200F403E2 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +85,153 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99192D8211C240727D7812D0 /* Pods_TimeManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		361F5316EB907127FFFCAA99 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				151217D77D353E11350FBE77 /* Pods-TimeManager.debug.xcconfig */,
+				B3CD7BB95AABEE48E696FB39 /* Pods-TimeManager.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EE1CB397EFE2FFCE64A6B562 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75CCA3AEF85175466DDB52C4 /* Pods_TimeManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F50072D123E5DBDA00A4732C /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				F50072D223E5DBE400A4732C /* Model */,
+				F50072D323E5DBEA00A4732C /* View */,
+				F50072D423E5DBF200A4732C /* Controller */,
+			);
+			path = TaskList;
+			sourceTree = "<group>";
+		};
+		F50072D223E5DBE400A4732C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F50072D723E69AC800A4732C /* TaskListModel.swift */,
+				F50072E423E6B7FE00A4732C /* TaskData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F50072D323E5DBEA00A4732C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F50072DF23E6B43400A4732C /* SubViews */,
+				F50072DB23E69DB400A4732C /* TaskListMainView.swift */,
+				F50072DD23E69DBE00A4732C /* TaskListStoryboard.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F50072D423E5DBF200A4732C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F50072D523E5DC3100A4732C /* TaskListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F50072DF23E6B43400A4732C /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				F50072E023E6B64B00A4732C /* TaskListTableViewCell.swift */,
+				F50072E123E6B64B00A4732C /* TaskListTableViewCell.xib */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		F50072E823E713B900A4732C /* TaskDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F50072EB23E713DB00A4732C /* Model */,
+				F50072EA23E713D400A4732C /* View */,
+				F50072E923E713CD00A4732C /* Controller */,
+			);
+			path = TaskDetail;
+			sourceTree = "<group>";
+		};
+		F50072E923E713CD00A4732C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F50072EE23E7152600A4732C /* TaskDetailViewControllerTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F50072EA23E713D400A4732C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F50072EC23E7150C00A4732C /* TaskDetailStoryboard.storyboard */,
+				F50072F023E71C4100A4732C /* TaskDetailsMainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F50072EB23E713DB00A4732C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F50072F223E71D7400A4732C /* TaskDetailModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F50072F423E7301F00A4732C /* TaskEdit */ = {
+			isa = PBXGroup;
+			children = (
+				F50072F723E7303800A4732C /* Model */,
+				F50072F623E7303200A4732C /* View */,
+				F50072F523E7302800A4732C /* Controller */,
+			);
+			path = TaskEdit;
+			sourceTree = "<group>";
+		};
+		F50072F523E7302800A4732C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F50072FA23E730FE00A4732C /* TaskEditViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F50072F623E7303200A4732C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F50072FC23E7312800A4732C /* TaskEditMainView.swift */,
+				F50072FE23E7381800A4732C /* TaskEditStoryboard.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F50072F723E7303800A4732C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F50072F823E730B300A4732C /* TaskEditModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F5EB10DE23E58B1900F403E2 = {
 			isa = PBXGroup;
 			children = (
 				F5EB10E923E58B1A00F403E2 /* TimeManager */,
 				F5EB10E823E58B1A00F403E2 /* Products */,
+				361F5316EB907127FFFCAA99 /* Pods */,
+				EE1CB397EFE2FFCE64A6B562 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,8 +246,12 @@
 		F5EB10E923E58B1A00F403E2 /* TimeManager */ = {
 			isa = PBXGroup;
 			children = (
+				F5EB110023E58D6F00F403E2 /* Managers */,
+				F5EB110123E58D8100F403E2 /* Screens */,
 				F5EB10EA23E58B1A00F403E2 /* AppDelegate.swift */,
+				F5EB110223E58D9B00F403E2 /* Coordinator */,
 				F5EB10EC23E58B1A00F403E2 /* SceneDelegate.swift */,
+				F5EB111123E5919D00F403E2 /* GlobalClassesExtensions */,
 				F5EB10EE23E58B1A00F403E2 /* ViewController.swift */,
 				F5EB10F023E58B1A00F403E2 /* Main.storyboard */,
 				F5EB10F323E58B2600F403E2 /* Assets.xcassets */,
@@ -67,6 +261,79 @@
 			path = TimeManager;
 			sourceTree = "<group>";
 		};
+		F5EB110023E58D6F00F403E2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F5EB110123E58D8100F403E2 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F50072F423E7301F00A4732C /* TaskEdit */,
+				F50072E823E713B900A4732C /* TaskDetail */,
+				F50072D123E5DBDA00A4732C /* TaskList */,
+				F5EB110B23E590E300F403E2 /* Login */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		F5EB110223E58D9B00F403E2 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F5EB110323E58E4C00F403E2 /* Coordinator.swift */,
+				F5EB110723E58F0B00F403E2 /* AppConfigurator.swift */,
+				F5EB110923E58F5700F403E2 /* ScreensCoordinator.swift */,
+				F5EB110523E58EBC00F403E2 /* StoryboardLoadable.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		F5EB110B23E590E300F403E2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F5EB111423E595FE00F403E2 /* Model */,
+				F5EB110C23E5912A00F403E2 /* View */,
+				F5EB111723E5962400F403E2 /* Controller */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F5EB110C23E5912A00F403E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F5EB110D23E5916200F403E2 /* LoginView.storyboard */,
+				F50072E623E6CC4B00A4732C /* LoginMainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F5EB111123E5919D00F403E2 /* GlobalClassesExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				F5EB111223E591D200F403E2 /* RootViewController.swift */,
+			);
+			path = GlobalClassesExtensions;
+			sourceTree = "<group>";
+		};
+		F5EB111423E595FE00F403E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5EB111523E5961E00F403E2 /* LoginModel.swift */,
+				F5EB111823E596D200F403E2 /* LoginData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F5EB111723E5962400F403E2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F5EB110F23E5919100F403E2 /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +341,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F5EB10FB23E58B2600F403E2 /* Build configuration list for PBXNativeTarget "TimeManager" */;
 			buildPhases = (
+				BDED999F16D1FDBE81DCD19E /* [CP] Check Pods Manifest.lock */,
 				F5EB10E323E58B1900F403E2 /* Sources */,
 				F5EB10E423E58B1900F403E2 /* Frameworks */,
 				F5EB10E523E58B1900F403E2 /* Resources */,
+				C10CDE4B520C4FBED3F0700F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,21 +395,88 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5EB10F723E58B2600F403E2 /* LaunchScreen.storyboard in Resources */,
+				F5EB110E23E5916200F403E2 /* LoginView.storyboard in Resources */,
 				F5EB10F423E58B2600F403E2 /* Assets.xcassets in Resources */,
 				F5EB10F223E58B1A00F403E2 /* Main.storyboard in Resources */,
+				F50072ED23E7150C00A4732C /* TaskDetailStoryboard.storyboard in Resources */,
+				F50072E323E6B64B00A4732C /* TaskListTableViewCell.xib in Resources */,
+				F50072FF23E7381800A4732C /* TaskEditStoryboard.storyboard in Resources */,
+				F50072DE23E69DBE00A4732C /* TaskListStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BDED999F16D1FDBE81DCD19E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimeManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C10CDE4B520C4FBED3F0700F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimeManager/Pods-TimeManager-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimeManager/Pods-TimeManager-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimeManager/Pods-TimeManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F5EB10E323E58B1900F403E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5EB110423E58E4C00F403E2 /* Coordinator.swift in Sources */,
+				F5EB110623E58EBC00F403E2 /* StoryboardLoadable.swift in Sources */,
+				F5EB111323E591D200F403E2 /* RootViewController.swift in Sources */,
+				F5EB110823E58F0B00F403E2 /* AppConfigurator.swift in Sources */,
+				F50072FD23E7312800A4732C /* TaskEditMainView.swift in Sources */,
 				F5EB10EF23E58B1A00F403E2 /* ViewController.swift in Sources */,
+				F50072E223E6B64B00A4732C /* TaskListTableViewCell.swift in Sources */,
+				F50072E523E6B7FE00A4732C /* TaskData.swift in Sources */,
+				F50072F323E71D7400A4732C /* TaskDetailModel.swift in Sources */,
+				F50072D623E5DC3100A4732C /* TaskListViewController.swift in Sources */,
+				F50072EF23E7152600A4732C /* TaskDetailViewControllerTableViewController.swift in Sources */,
+				F50072DC23E69DB400A4732C /* TaskListMainView.swift in Sources */,
+				F5EB111623E5961E00F403E2 /* LoginModel.swift in Sources */,
+				F50072D823E69AC800A4732C /* TaskListModel.swift in Sources */,
+				F50072F923E730B300A4732C /* TaskEditModel.swift in Sources */,
+				F5EB111023E5919100F403E2 /* LoginViewController.swift in Sources */,
+				F50072F123E71C4100A4732C /* TaskDetailsMainView.swift in Sources */,
+				F5EB110A23E58F5700F403E2 /* ScreensCoordinator.swift in Sources */,
 				F5EB10EB23E58B1A00F403E2 /* AppDelegate.swift in Sources */,
+				F50072E723E6CC4B00A4732C /* LoginMainView.swift in Sources */,
 				F5EB10ED23E58B1A00F403E2 /* SceneDelegate.swift in Sources */,
+				F50072FB23E730FE00A4732C /* TaskEditViewController.swift in Sources */,
+				F5EB111923E596D200F403E2 /* LoginData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,11 +618,13 @@
 		};
 		F5EB10FC23E58B2600F403E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 151217D77D353E11350FBE77 /* Pods-TimeManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T288BZ827T;
 				INFOPLIST_FILE = TimeManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,17 +632,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "try-to-do-similar-project.TimeManager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		F5EB10FD23E58B2600F403E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3CD7BB95AABEE48E696FB39 /* Pods-TimeManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T288BZ827T;
 				INFOPLIST_FILE = TimeManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +652,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "try-to-do-similar-project.TimeManager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

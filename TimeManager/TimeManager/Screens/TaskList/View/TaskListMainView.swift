@@ -9,13 +9,41 @@
 import UIKit
 
 class TaskListMainView: UIView {
+    
+    // MARK: -
+    // MARK: Properties
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet var taskTable: UITableView?
+    @IBOutlet var bellItem: UIBarButtonItem?
+    @IBOutlet var addTaskButton: UIButton?
+    public var bellState: Bool = true {
+        didSet{
+            if bellState {
+                bellItem?.image = UIImage(named: "empty_bell")
+            } else {
+                bellItem?.image = UIImage(named: "filled_bell")
+            }
+        }
     }
-    */
-
+    public var eventHandler: ((TaskListEvents)->())?
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        guard let btn = self.addTaskButton else {return}
+        self.addTaskButton?.layer.cornerRadius = btn.bounds.width / 2
+    }
+    
+    // MARK: -
+    // MARK: Actions and Methods
+    
+    @IBAction func bellPressed(_ sender: Any) {
+        self.bellState = !self.bellState
+    }
+    @IBAction func sortPressed(_ sender: Any) {
+        self.eventHandler?(.sortPressed)
+    }
+    @IBAction func addTaskButtonPressed(_ sender: Any) {
+        self.eventHandler?(.addTask)
+    }
+    
 }

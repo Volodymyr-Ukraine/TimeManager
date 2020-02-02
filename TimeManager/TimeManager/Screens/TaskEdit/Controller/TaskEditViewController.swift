@@ -8,8 +8,15 @@
 
 import UIKit
 
-class TaskEditController: RootViewController, StoryboardLoadable {
-
+class TaskEditViewController: RootViewController, StoryboardLoadable {
+    // MARK: -
+    // MARK: Init and Deinit
+    
+    static public func startVC() -> TaskEditViewController {
+        let contr = self.loadFromStoryboard(storyboardName: "TaskEditStoryboard")
+        return contr
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

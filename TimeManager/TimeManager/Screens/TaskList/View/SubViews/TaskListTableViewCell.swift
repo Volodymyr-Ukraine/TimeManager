@@ -9,7 +9,20 @@
 import UIKit
 
 class TaskListTableViewCell: UITableViewCell {
-
+    
+    // MARK: -
+    // MARK: Properties
+    
+    @IBOutlet var descriptionLabel: UILabel?
+    @IBOutlet var dateLabel: UILabel?
+    @IBOutlet var arrowImage: UIImageView?
+    @IBOutlet var priorityLabel: UILabel?
+    private var data: TaskData?
+    public var eventHandler: ((TaskData?)->())?
+    
+    // MARK: -
+    // MARK: Init and Deinit
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,7 +31,19 @@ class TaskListTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
+    // MARK: -
+    // MARK: Methods
+
+    public func setData(_ data: TaskData) {
+        self.data = data
+        self.descriptionLabel?.text = data.description
+        self.dateLabel?.text = data.date + "    "
+        self.priorityLabel?.text = data.priority.rawValue.capitalized
+    }
+    
+    @IBAction func infoPressed(_ sender: Any) {
+        self.eventHandler?(self.data)
+    }
 }

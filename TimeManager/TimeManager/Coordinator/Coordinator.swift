@@ -6,4 +6,9 @@
 //  Copyright © 2020 Volodymyr. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol Coordinator {
+    var navigationController: UINavigationController { get }
+    func start()
+}

@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+class TaskDetailModel {
+    public var data: TaskData?
+    
+}

@@ -16,30 +16,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Okb-1T-MaG">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0av-cF-Cxd">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <navigationItem title="Title" id="RKp-SK-YXY">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="empty_bell" id="zVI-M9-4rI"/>
+                                    <navigationItem title="My Tasks" id="RKp-SK-YXY">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="empty_bell" id="zVI-M9-4rI">
+                                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
+                                            <connections>
+                                                <action selector="bellPressed:" destination="tzl-eS-QbG" id="aAk-lg-E29"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="list.bullet.indent" catalog="system" id="7Tx-Cs-XuY">
+                                            <connections>
+                                                <action selector="sortPressed:" destination="tzl-eS-QbG" id="F2E-ig-NMf"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Okb-1T-MaG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="0.9960127473" green="0.9246329069" blue="0.55352526899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWU-yY-IVq">
+                                <rect key="frame" x="354" y="802" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.49451690910000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="H0f-wL-cPj"/>
+                                    <constraint firstAttribute="width" constant="50" id="bR2-0Y-tXP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="tintColor" red="0.9960127473" green="0.9246329069" blue="0.55352526899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="+">
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTaskButtonPressed:" destination="tzl-eS-QbG" eventType="touchUpInside" id="eI9-nI-OqS"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SRK-7p-ASx" firstAttribute="bottom" secondItem="Okb-1T-MaG" secondAttribute="bottom" id="2Qk-Or-bdl"/>
                             <constraint firstItem="SRK-7p-ASx" firstAttribute="trailing" secondItem="Okb-1T-MaG" secondAttribute="trailing" id="5xN-Lu-DHr"/>
+                            <constraint firstItem="SRK-7p-ASx" firstAttribute="trailing" secondItem="PWU-yY-IVq" secondAttribute="trailing" constant="10" id="NXL-ry-v8W"/>
                             <constraint firstItem="Okb-1T-MaG" firstAttribute="top" secondItem="0av-cF-Cxd" secondAttribute="bottom" id="WBV-aU-vyr"/>
                             <constraint firstItem="0av-cF-Cxd" firstAttribute="leading" secondItem="SRK-7p-ASx" secondAttribute="leading" id="kg8-7t-Atm"/>
                             <constraint firstItem="0av-cF-Cxd" firstAttribute="trailing" secondItem="SRK-7p-ASx" secondAttribute="trailing" id="oXk-s9-LlQ"/>
                             <constraint firstItem="Okb-1T-MaG" firstAttribute="leading" secondItem="SRK-7p-ASx" secondAttribute="leading" id="q26-NY-Y3A"/>
                             <constraint firstItem="0av-cF-Cxd" firstAttribute="top" secondItem="SRK-7p-ASx" secondAttribute="top" id="tV4-PV-Uk7"/>
+                            <constraint firstItem="SRK-7p-ASx" firstAttribute="bottom" secondItem="PWU-yY-IVq" secondAttribute="bottom" constant="10" id="ugR-Dr-GpH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SRK-7p-ASx"/>
+                        <connections>
+                            <outlet property="addTaskButton" destination="PWU-yY-IVq" id="dIp-VW-e6T"/>
+                            <outlet property="bellItem" destination="zVI-M9-4rI" id="kQU-vs-175"/>
+                            <outlet property="taskTable" destination="Okb-1T-MaG" id="Tby-KX-bH2"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3DW-T3-2II" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -49,5 +84,6 @@
     </scenes>
     <resources>
         <image name="empty_bell" width="33.5" height="40"/>
+        <image name="list.bullet.indent" catalog="system" width="64" height="36"/>
     </resources>
 </document>

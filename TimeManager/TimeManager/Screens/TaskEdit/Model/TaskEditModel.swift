@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+class TaskEditModel {
+    public var data: TaskData?
+    
+}

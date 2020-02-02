@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+struct TaskData {
+    enum Priority: String {
+        case low
+        case medium
+        case high
+    }
+    var id: Int
+    var description: String
+    var date: String
+    var longDate: String
+    var priority: Priority
+}

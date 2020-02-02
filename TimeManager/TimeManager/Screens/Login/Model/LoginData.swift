@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct LoginData {
+    let mail: String
+    let password: String
+    let doRegister: Bool
+}
