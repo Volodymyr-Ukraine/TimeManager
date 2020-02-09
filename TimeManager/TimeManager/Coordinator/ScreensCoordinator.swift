@@ -10,8 +10,9 @@ import UIKit
 
 enum AvailableScreens {
     case login
-    case taskList
-    case taskDetail(TaskData?)
+    case taskList(TaskList?)
+    case taskDetail(InternalTaskData?)
+    case taskEdit(InternalTaskData?)
 }
 
 
@@ -50,17 +51,21 @@ final class ScreensCoordinator: Coordinator {
             
             switch event {
             case .loginPressed(let data):
-                print("ScreensCoordinator catched \(event) with data \(data)")
+                
+                let success: ((TaskList)->()) = { [weak self] list in
+                    self?.jumpToScreen(.taskList(list))
+                }
+                RequesterURL.ask.getTaskList(1, sorting: .title, direction: true, toDoIfSuccess: success, toDoIfError: nil)
             }
-            self?.jumpToScreen(.taskList)
         }
         self.navigationController.pushViewController(contr, animated: true)
     }
     
-    private func makeTaskList(){
+    private func makeTaskList(_ list: TaskList?){
         let contr = TaskListViewController.startVC()
-        self.navigationScreens.append(.taskList)
-        contr.model = TaskListModel()
+        self.navigationScreens.append(.taskList(list))
+        contr.model = TaskListModel(list: list)
+        contr.model.setSeekParameters(page: 1, sorting: .title, direction: true)
         contr.eventHandler = { [weak self] event in
             
             switch event {
@@ -71,14 +76,14 @@ final class ScreensCoordinator: Coordinator {
             case .sortPressed:
                 self?.jumpToScreen(.login)
             case .addTask:
-                print("\(event)")
+                self?.jumpToScreen(.taskEdit(nil))
             }
             
         }
         self.navigationController.pushViewController(contr, animated: true)
     }
     
-    private func makeTaskDetail(_ data: TaskData?) {
+    private func makeTaskDetail(_ data: InternalTaskData?) {
         let contr = TaskDetailViewController.startVC()
         self.navigationScreens.append(.taskDetail(data))
         contr.model.data = data
@@ -87,29 +92,50 @@ final class ScreensCoordinator: Coordinator {
             case .backPressed:
                 self?.navigationScreens = self?.navigationScreens.dropLast() ?? []
                 self?.navigationController.popViewController(animated: true)
-            default:
-                print("TODO : handle event \(event) in \(Self.self)")
-                self?.makeTaskEdit(nil)
+            case .editPressed(let data):
+                self?.jumpToScreen(.taskEdit(data))
+            case .deleteTask(let data):
+                self?.jumpToScreen(.taskList(nil))
             }
         }
         self.navigationController.pushViewController(contr, animated: true)
     }
     
-    private func makeTaskEdit(_ data: TaskData?) {
+    private func makeTaskEdit(_ data: InternalTaskData?) {
         let contr = TaskEditViewController.startVC()
+        self.navigationScreens.append(.taskEdit(data))
+        contr.model = TaskEditModel()
+        contr.model.data = data
+        contr.eventHandler = {[weak self] task in
+            guard let this = self else{return}
+            switch task {
+            case .back:
+                self?.navigationScreens = self?.navigationScreens.dropLast() ?? []
+                self?.navigationController.popViewController(animated: true)
+            case .deleteTask(let id):
+                self?.jumpToScreen(.taskList(nil))
+            case .saveTask:
+                self?.jumpToScreen(.taskList(nil))
+            }
+        }
         self.navigationController.pushViewController(contr, animated: true)
     }
 }
+
+// MARK: -
+// MARK: Extensions
 
 extension ScreensCoordinator {
     public func jumpToScreen(_ jumpTo: AvailableScreens) {
         switch jumpTo {
         case .login:
             self.makeLogin()
-        case .taskList:
-            self.makeTaskList()
+        case .taskList(let list):
+            self.makeTaskList(list)
         case .taskDetail(let data):
             self.makeTaskDetail(data)
+        case .taskEdit(let data):
+            self.makeTaskEdit(data)
         }
     }
 }

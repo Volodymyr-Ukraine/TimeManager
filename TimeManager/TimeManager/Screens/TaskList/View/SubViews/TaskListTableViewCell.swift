@@ -17,8 +17,8 @@ class TaskListTableViewCell: UITableViewCell {
     @IBOutlet var dateLabel: UILabel?
     @IBOutlet var arrowImage: UIImageView?
     @IBOutlet var priorityLabel: UILabel?
-    private var data: TaskData?
-    public var eventHandler: ((TaskData?)->())?
+    private var data: InternalTaskData?
+    public var eventHandler: ((InternalTaskData?)->())?
     
     // MARK: -
     // MARK: Init and Deinit
@@ -35,15 +35,15 @@ class TaskListTableViewCell: UITableViewCell {
     
     // MARK: -
     // MARK: Methods
-
-    public func setData(_ data: TaskData) {
+    
+    @IBAction func infoPressed(_ sender: Any) {
+        self.eventHandler?(self.data)
+    }
+    
+    public func setData(_ data: InternalTaskData) {
         self.data = data
         self.descriptionLabel?.text = data.description
         self.dateLabel?.text = data.date + "    "
         self.priorityLabel?.text = data.priority.rawValue.capitalized
-    }
-    
-    @IBAction func infoPressed(_ sender: Any) {
-        self.eventHandler?(self.data)
     }
 }

@@ -10,11 +10,12 @@ import UIKit
 
 enum TaskDetailEvent{
     case backPressed
-    case editPressed(TaskData?)
-    case deleteTask(TaskData?)
+    case editPressed(InternalTaskData?)
+    case deleteTask(InternalTaskData?)
 }
 
 class TaskDetailViewController: RootViewController, StoryboardLoadable {
+    
     // MARK: -
     // MARK: Properties
     
@@ -24,7 +25,22 @@ class TaskDetailViewController: RootViewController, StoryboardLoadable {
     public var model: TaskDetailModel = TaskDetailModel()
     public var eventHandler: ((TaskDetailEvent)->())? {
         didSet{
-            self.mainView?.eventHandler = self.eventHandler
+            self.mainView?.eventHandler = {[weak self] event in
+                switch event {
+                case .deleteTask(let data):
+                    let success: ()->() = { [weak self] in
+                        self?.eventHandler?(.deleteTask(data))
+                    }
+                    let error: (TaskList)->Void = { [weak self] list in
+                        let alert = UIAlertController(title: "Error in deleting", message: list.message, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self?.present(alert, animated: true)
+                    }
+                    RequesterURL.ask.deleteTask(id: data?.id, toDoIfSuccess: success, toDoIfError: error)
+                default:
+                    self?.eventHandler?(event)
+                }
+            }
         }
     }
     
@@ -41,8 +57,4 @@ class TaskDetailViewController: RootViewController, StoryboardLoadable {
         self.mainView?.setData(self.model.data)
 
     }
-
-    // MARK: -
-    // MARK: Table view data source
-
 }

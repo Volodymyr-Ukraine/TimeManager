@@ -17,17 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="uNn-YV-qeH">
-                                <rect key="frame" x="69" y="352" width="276" height="302"/>
+                                <rect key="frame" x="69" y="252" width="276" height="302"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pkj-Io-M0s">
                                         <rect key="frame" x="0.0" y="0.0" width="276" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LK0-gA-kFe">
                                         <rect key="frame" x="0.0" y="93" width="276" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="fT1-UM-lKV">
                                         <rect key="frame" x="0.0" y="186" width="276" height="31"/>
@@ -50,13 +50,13 @@
                                         <color key="tintColor" red="0.9960127473" green="0.9246329069" blue="0.55352526899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="LOG IN"/>
                                         <connections>
-                                            <action selector="LogInPressed:" destination="boW-X6-rd9" eventType="touchUpInside" id="63s-IC-IgD"/>
+                                            <action selector="LogInPressed:" destination="boW-X6-rd9" eventType="touchUpInside" id="8Fq-Ed-UVp"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iZ-2E-IBq">
-                                <rect key="frame" x="156.5" y="159" width="101" height="42"/>
+                                <rect key="frame" x="156.5" y="124" width="101" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -64,18 +64,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.9960127473" green="0.9246329069" blue="0.55352526899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="3iZ-2E-IBq" firstAttribute="top" secondItem="iDh-w0-nYJ" secondAttribute="top" constant="115" id="38l-bc-CFZ"/>
+                            <constraint firstItem="3iZ-2E-IBq" firstAttribute="top" secondItem="iDh-w0-nYJ" secondAttribute="top" constant="80" id="38l-bc-CFZ"/>
                             <constraint firstItem="3iZ-2E-IBq" firstAttribute="centerX" secondItem="iDh-w0-nYJ" secondAttribute="centerX" id="aBn-oF-1xH"/>
-                            <constraint firstItem="iDh-w0-nYJ" firstAttribute="centerY" secondItem="uNn-YV-qeH" secondAttribute="centerY" constant="-50" id="h2c-bD-guh"/>
+                            <constraint firstItem="iDh-w0-nYJ" firstAttribute="centerY" secondItem="uNn-YV-qeH" secondAttribute="centerY" constant="50" id="h2c-bD-guh"/>
                             <constraint firstItem="uNn-YV-qeH" firstAttribute="centerX" secondItem="iDh-w0-nYJ" secondAttribute="centerX" id="z7d-t2-yMT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iDh-w0-nYJ"/>
+                        <connections>
+                            <outlet property="emailTextField" destination="Pkj-Io-M0s" id="eJT-ea-lpJ"/>
+                            <outlet property="passwordTextField" destination="LK0-gA-kFe" id="hIc-B8-9bt"/>
+                            <outlet property="registerSwitch" destination="Cfa-YI-ahm" id="b3s-Eb-Ttv"/>
+                        </connections>
                     </view>
-                    <connections>
-                        <outlet property="emailTextField" destination="Pkj-Io-M0s" id="i1G-NY-hUq"/>
-                        <outlet property="passwordTextField" destination="LK0-gA-kFe" id="Yne-az-W1O"/>
-                        <outlet property="registerSwitch" destination="Cfa-YI-ahm" id="8N8-at-HnU"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="taE-cM-tUp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

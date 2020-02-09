@@ -25,10 +25,5 @@ final class AppConfigurator {
         self.coordinator?.start()
         window.makeKeyAndVisible()
     }
-
-//    public func userGoogleAppeared(user: GIDGoogleUser?){
-//        let coord = (self.coordinator as? ItemCoordinator)
-//        coord?.user = user
-//    }
 }
 

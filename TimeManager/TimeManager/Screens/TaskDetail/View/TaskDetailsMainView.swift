@@ -19,16 +19,8 @@ class TaskDetailsMainView: UIView {
     @IBOutlet var priorityLabel: UILabel?
     @IBOutlet var descriptionLabel: UILabel?
     @IBOutlet var notificationLabel: UILabel?
-    private var data: TaskData?
+    private var data: InternalTaskData?
     public var eventHandler: ((TaskDetailEvent)->())?
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     
     // MARK: -
     // MARK: Methods
@@ -43,7 +35,7 @@ class TaskDetailsMainView: UIView {
         self.eventHandler?(.deleteTask(self.data))
     }
     
-    public func setData(_ data: TaskData?){
+    public func setData(_ data: InternalTaskData?){
         self.data = data
         self.titleLabel?.text = data?.description ?? ""
         self.dateLabel?.text = data?.longDate

@@ -9,13 +9,27 @@
 import UIKit
 
 class LoginMainView: UIView {
+    
+    // MARK: -
+    // MARK: Properties
+    
+    @IBOutlet var emailTextField: UITextField?
+    @IBOutlet var passwordTextField: UITextField?
+    @IBOutlet var registerSwitch: UISwitch?
+    
+    // MARK: -
+    // MARK: Methods
 
+    public func setData(_ data: LoginData) {
+        self.emailTextField?.text = data.mail
+        self.passwordTextField?.text = data.password
+        self.registerSwitch?.isOn = data.doRegister
+    }
     
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-//    override func draw(_ rect: CGRect) {
-//         
-//    }
-    
+    public func getData() -> LoginData {
+        return LoginData(mail: self.emailTextField?.text ?? "",
+        password: self.passwordTextField?.text ?? "",
+        doRegister: self.registerSwitch?.isOn ?? false)
+    }
 
 }

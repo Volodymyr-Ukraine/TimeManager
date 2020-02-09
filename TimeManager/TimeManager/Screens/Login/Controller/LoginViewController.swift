@@ -9,7 +9,7 @@
 import UIKit
 
 enum LoginEvents {
-    case loginPressed(LoginData?)
+    case loginPressed(LoginResultData?)
 }
 
 class LoginViewController: RootViewController, StoryboardLoadable{
@@ -17,9 +17,6 @@ class LoginViewController: RootViewController, StoryboardLoadable{
     // MARK: -
     // MARK: Properties
 
-    @IBOutlet var emailTextField: UITextField?
-    @IBOutlet var passwordTextField: UITextField?
-    @IBOutlet var registerSwitch: UISwitch?
     public var model = LoginModel()
     public var eventHandler: ((LoginEvents)->())?
     private var mainView: LoginMainView? {
@@ -36,19 +33,30 @@ class LoginViewController: RootViewController, StoryboardLoadable{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let data = self.model.data else {return}
-        self.emailTextField?.text = data.mail
-        self.passwordTextField?.text = data.password
-        self.registerSwitch?.isOn = data.doRegister
+        if let data = self.model.data {
+            self.mainView?.setData(data)
+        }
     }
     
+    // MARK: -
+    // MARK: Methods
+    
     @IBAction func LogInPressed(_ sender: Any) {
-        let state = self.registerSwitch
-        self.eventHandler?(.loginPressed(
-            LoginData(mail: self.emailTextField?.text ?? "",
-                      password: self.passwordTextField?.text ?? "",
-                      doRegister: self.registerSwitch?.isOn ?? false)
-            ))
+        guard let loginData = self.mainView?.getData() else {return}
+        
+        let success: (LoginResultData)->() = { [weak self] result in
+            self?.eventHandler?(.loginPressed( result ))
+        }
+        let error: (LoginResultData)->() = { [weak self] result in
+            guard let this = self else {return}
+            
+            let alert = UIAlertController(title: "Error in the fields", message: result.message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            this.present(alert, animated: true)
+        }
+        
+        self.model.login(loginData, toDoIfSuccess: success, toDoIfError: error)
     }
     
 }
+

@@ -10,7 +10,7 @@ import UIKit
 
 enum TaskListEvents{
     case sortPressed
-    case cellInfo(TaskData?)
+    case cellInfo(InternalTaskData?)
     case addTask
 }
 
@@ -50,6 +50,17 @@ class TaskListViewController: RootViewController, StoryboardLoadable, UITableVie
         self.table?.register(UINib(nibName: "TaskListTableViewCell", bundle: Bundle(for: Self.self)), forCellReuseIdentifier: cellName)
         self.table?.delegate = self
         self.table?.dataSource = self
+        let success: (TaskList)->() = { [weak self] list in
+            self?.table?.reloadData()
+        }
+        let error: (TaskList)->() = { [weak self] list in
+            guard let this = self else {return}
+            
+            let alert = UIAlertController(title: "Error in the result", message: list.message ?? "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            this.present(alert, animated: true)
+        }
+        self.model.getFirstTasks(ifSuccess: success, ifError: error)
     }
     
     // MARK: -
@@ -69,5 +80,14 @@ class TaskListViewController: RootViewController, StoryboardLoadable, UITableVie
             self?.eventHandler?(.cellInfo(event))
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if (self.model.data.count - indexPath.row) == 10 {
+            let success: (TaskList)->() = {[weak self] list in
+                self?.table?.reloadData()
+            }
+            self.model.getNextTask(ifSuccess: success, ifError: nil)
+        }
     }
 }

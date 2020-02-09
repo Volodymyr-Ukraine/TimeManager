@@ -27,6 +27,9 @@ class TaskListMainView: UIView {
     }
     public var eventHandler: ((TaskListEvents)->())?
     
+    // MARK: -
+    // MARK: Init and Deinit
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         guard let btn = self.addTaskButton else {return}

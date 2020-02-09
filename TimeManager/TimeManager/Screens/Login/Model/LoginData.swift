@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct LoginData {
-    let mail: String
-    let password: String
-    let doRegister: Bool
+public struct LoginData {
+    public let mail: String
+    public let password: String
+    public let doRegister: Bool
 }

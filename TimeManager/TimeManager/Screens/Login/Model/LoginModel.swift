@@ -9,5 +9,18 @@
 import Foundation
 
 class LoginModel {
-    var data: LoginData?
+    
+    // MARK: -
+    // MARK: Properties
+    
+    public var data: LoginData?
+    
+    // MARK: -
+    // MARK: Methods
+
+    public func login(_ data: LoginData,
+                    toDoIfSuccess: ((LoginResultData)->())?,
+                    toDoIfError: ((LoginResultData)->())?) {
+        RequesterURL.ask.loginUser(user: data, toDoIfSuccess: toDoIfSuccess, toDoIfError: toDoIfError)
+    }
 }

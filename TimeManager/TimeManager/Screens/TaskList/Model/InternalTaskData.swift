@@ -1,5 +1,5 @@
 //
-//  TaskData.swift
+//  InternalTaskData.swift
 //  TimeManager
 //
 //  Created by Vladimir on 2/2/20.
@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct TaskData {
-    enum Priority: String {
-        case low
-        case medium
-        case high
-    }
+struct InternalTaskData {
+    
+    // MARK: -
+    // MARK: Properties
+    
     var id: Int
+    var title: String
     var description: String
     var date: String
     var longDate: String
-    var priority: Priority
+    var priority: PriorityEnum
 }
